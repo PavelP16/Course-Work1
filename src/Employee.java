@@ -7,6 +7,7 @@ public class Employee {
 
     private static int id;
 
+
     public Employee(String name, String jobTitle, double salary) {
         this.name = name;
         this.jobTitle = jobTitle;
@@ -59,5 +60,12 @@ public class Employee {
         System.out.println("Name: " + name);
         System.out.println("Job Title: " + jobTitle);
         System.out.println("Salary: " + salary);
+
+
+
+
+
+
+
     }
 }
