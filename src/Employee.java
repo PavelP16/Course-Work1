@@ -5,14 +5,21 @@ public class Employee {
     private String jobTitle;
     private double salary;
 
-    private static int id;
+    private static int idCounter;
 
+    private final int id;
 
     public Employee(String name, String jobTitle, double salary) {
         this.name = name;
         this.jobTitle = jobTitle;
         this.salary = salary;
-        id = id + 1;
+        id = idCounter;
+        idCounter++;
+    }
+
+
+    public  int getId() {
+        return id;
     }
 
     public String getName() {
@@ -33,8 +40,9 @@ public class Employee {
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, jobTitle, salary);
+        return Objects.hash(name, jobTitle, salary,id);
     }
+
 
     public String getJobTitle() {
         return jobTitle;
@@ -61,11 +69,17 @@ public class Employee {
         System.out.println("Job Title: " + jobTitle);
         System.out.println("Salary: " + salary);
 
-
-
-
-
-
-
     }
+
+
+    public static void employeesFor() {
+        for (int i = 0; i < Main.employees.length; i++) {
+            System.out.println(Main.employees[i]);
+
+        }
+    }
+
+
+
 }
+
